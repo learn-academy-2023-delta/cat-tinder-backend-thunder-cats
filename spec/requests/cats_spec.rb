@@ -22,7 +22,7 @@ RSpec.describe "Cats", type: :request do
     it"creates a thunder cat" do
       thunder_cat_params = {
         cat: {
-          name: 'Panthro',
+        name: 'Panthro',
         age: 24,
         enjoys: 'Loves to lift weights and does not rerack the weights.',
         image: 'https://static.wikia.nocookie.net/thundercats/images/d/d7/2vlcsnap-2014-03-12-21h53m03s204.jpg/revision/latest?cb=20140322205906'
@@ -44,7 +44,7 @@ RSpec.describe "Cats", type: :request do
     it"updates a thunder cat" do
       thunder_cat_params = {
         cat: {
-          name: 'Panthro',
+        name: 'Panthro',
         age: 24,
         enjoys: 'Loves to lift weights and does not rerack the weights.',
         image: 'https://static.wikia.nocookie.net/thundercats/images/d/d7/2vlcsnap-2014-03-12-21h53m03s204.jpg/revision/latest?cb=20140322205906'
@@ -56,7 +56,7 @@ RSpec.describe "Cats", type: :request do
 
       updated_thunder_cat_params = {
         cat: {
-          name: 'Panthro',
+        name: 'Panthro',
         age: 34,
         enjoys: 'Loves to lift weights and does not rerack the weights.',
         image: 'https://static.wikia.nocookie.net/thundercats/images/d/d7/2vlcsnap-2014-03-12-21h53m03s204.jpg/revision/latest?cb=20140322205906'
@@ -83,7 +83,6 @@ RSpec.describe "Cats", type: :request do
 
        delete "/cats/#{cat.id}"
        new_cat = Cat.all
-
        expect(new_cat).to be_empty
        expect(response).to have_http_status(200)
     end
