@@ -6,13 +6,21 @@ class CatsController < ApplicationController
 
     def create
         cat = Cat.create(thunder_cat_params)
-        render json: cat
+        if cat.valid?
+            render json: cat
+        else 
+            render json: cat.errors, status: 422
+        end
     end
 
     def update
         cat = Cat.find(params[:id])
         cat.update(thunder_cat_params)
-        render json: cat
+        if cat.valid?
+            render json: cat
+        else 
+            render json: cat.errors, status: 422
+        end
     end
 
     def destroy
@@ -20,7 +28,6 @@ class CatsController < ApplicationController
         cat.destroy
         render json: cat
     end
-
 
     private
     def thunder_cat_params
